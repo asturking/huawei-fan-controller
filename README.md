@@ -1,14 +1,7 @@
 # Huawei iBMC Fan Control script
 
-This repository contains an script and a SystemD service to periodically monitor
+This repository contains an script for a docker image and a SystemD service to periodically monitor
 CPU temperature and adjust fans.
-
-## How to Install
-
-1. Clone this repository
-2. Put your iBMC IP and SNMP community in the `fancontrol.sh` script.
-3. Modify temperatures or fan speeds in the script, if needed.
-4. Execute `./install.sh`
 
 ## Configure iBMC
 
@@ -25,6 +18,8 @@ To do so:
 
 **Warning:** Do not share your community value. It can be used to access your
 iBMC configuration and change it. It is a password.
+
+docker run --rm --privileged -e COMMUNITY=YOUR_SNMPv2_PASSWORD -e IBMC_IP=YOUR_IBMC_IP asturking/huawei-fan-controller:latest
 
 ## Systems tested with:
 
