@@ -19,8 +19,6 @@ To do so:
 **Warning:** Do not share your community value. It can be used to access your
 iBMC configuration and change it. It is a password.
 
-docker run --rm --privileged -e COMMUNITY=YOUR_SNMPv2_PASSWORD -e IBMC_IP=YOUR_IBMC_IP asturking/huawei-fan-controller:latest
-
 ## Systems tested with:
 
 - Huawei RH2288H v3
