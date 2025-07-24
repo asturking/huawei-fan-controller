@@ -1,7 +1,7 @@
 #!/bin/bash
 
-COMMUNITY="$COMMUNITY"
-IBMC_IP="$IBMC_IP"
+IBMC_IP="${IBMC_IP:?You must set IBMC_IP}"
+COMMUNITY="${COMMUNITY:?You must set COMMUNITY}"
 
 CPU_TEMP="$(sensors -Aj coretemp-isa-* | jq '.[][] | to_entries[] | select(.key | endswith("input")) | .value' | sort -rn | head -n1)"
 
